@@ -1,7 +1,7 @@
 # Algorithm-Experimentation
 
 ## Dijkstra algorithm
-Messed around with Dijkstra's algorithm for pathfinding A to B.  I found it was fine when the grid was small in size (less than 100 size grid. When specifying the grid to be over 100 nodes, the algorithm significantly slowed down as it had to check all paths that were still valid. 
+Messed around with Dijkstra's algorithm for pathfinding A to B.  I found it was fine when the grid was small in size (less than 100 size grid). When specifying the grid to be over 100 nodes, the algorithm significantly slowed down as it had to check all paths that were still valid. 
 
 ## A* Search 
 Messed around with the A* Search which is a more efficient finding version of Dijkstra because the distance from the current node to the end is used as a deciding variable. Travelling from A to B with C being the current node, the distance from C to B is used to determine how important the current path is. 
