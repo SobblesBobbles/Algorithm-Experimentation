@@ -12,7 +12,7 @@ Messed around with the A* Search which is a more efficient finding version of Di
 
 
 ## Modifying the efficiency
-I found the same issue with complexity once the grid is larger than 100. So I thought about what A* was trying to achieve. 
+I found that the complexity was better than Dijkstra but it still created timing issues over larger grid sets (over 200). So I thought about what A* was trying to achieve. 
 A* was using distance as a variable when computing the list of suitable paths. So I concentrated on that, A to B with C being the current Node inbetween A and B, I used X as the distance between C and B and multiplied its importance in determining the X value. 
 
 This actually created a much faster result although further testing remains to see if it works is always 100% correct. 
