@@ -84,6 +84,7 @@ function CreateNodes () {
    for (var i = 0; i<cols; i++){
      grid[i] = new Array(rows);
    }
+
    for(var  i = 0; i<cols; i++){
      for (var j = 0; j<rows; j++){
        grid[i][j] = new Node(i,j);
@@ -91,17 +92,15 @@ function CreateNodes () {
      }
    }
    start = grid[0][0];
-   //end = grid[70][99];
-   var randomX = random(48);
-   var randomY = random(48);
-      end = grid[48][40];
+   end = grid[48][40];
 }
 
 
 function setup(){
     CreateGrid();
     CreateNodes();
-
+  
+  // Adding all the grid nodes and their relationships
     for(var  i = 0; i<cols; i++){
       for (var j = 0; j<rows; j++){
          grid[i][j].addNeighbours(grid);
@@ -111,20 +110,15 @@ function setup(){
       open:true,
       grid : start
     };
-
-      openSet.push(start);
+    openSet.push(start);
 }
 
 
-
+// P5 Overwrite function
 function draw ()
 {
-
-
 // While loop
   if (openSet.length>0){
-
-
       var lowestIndex = 0;
         // find the index of the closest node in the Open Set
       for(var i = 0; i<openSet.length; i++){
@@ -174,26 +168,23 @@ function draw ()
    else {
      IsSolution = false;
    }
-
-
   background(0);
-
+  
+    // setting the colors
   for(var i = 0; i<cols; i++){
     for(var j = 0; j<rows; j++){
       grid[i][j].show(color(255));
     }
   }
 
-  //
+  // setting the colors
   for(var i = 0; i<openSet.length; i++ ){
     openSet[i].show(color(0,255,0));
   }
-
+  // setting the colors
   for(var i = 0; i<closedSet.length; i++ ){
     closedSet[i].show(color(255,0,0));
   }
-
-
 
 
   // Find the path
@@ -211,10 +202,8 @@ else if(!IsSolution){
   noLoop();
 }
 
-
   for(var i = 0; i<path.length; i++ ){
     path[i].show(color(0,0,255));
   }
-
 
 }
